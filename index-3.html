@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASHVX HUB — Free Premium Scripts</title>
+<style>
+:root{--bg:#07070b;--panel:#111118;--panel2:#171720;--text:#f5f5f7;--muted:#9999a8;--accent:#8b5cf6;--accent2:#a78bfa;--border:#252532}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(circle at 50% -10%,#241447 0,#0b0911 35%,var(--bg) 65%);color:var(--text)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid var(--border);background:#07070bcc;backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}
+.logo{font-size:23px;font-weight:900;letter-spacing:1px}.logo span{color:var(--accent2)}
+nav a{color:#ddd;text-decoration:none;margin-left:24px;font-size:14px}nav a:hover{color:#fff}
+.hero{text-align:center;padding:85px 20px 55px}.badge{display:inline-block;padding:7px 13px;border:1px solid #4b3677;border-radius:999px;color:#c4b5fd;background:#8b5cf612;font-size:12px;font-weight:700}
+h1{font-size:clamp(42px,8vw,78px);line-height:.95;margin:22px 0 16px;letter-spacing:-3px}h1 span{color:var(--accent2)}
+.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:17px;line-height:1.7}
+.buttons{margin-top:28px}.btn{display:inline-block;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;margin:5px}.primary{background:var(--accent);color:white}.secondary{border:1px solid var(--border);color:#ddd;background:#ffffff08}
+.container{width:min(1100px,90%);margin:auto}.section-head{display:flex;justify-content:space-between;align-items:end;margin:35px 0 18px}.section-head h2{margin:0;font-size:26px}.section-head p{margin:5px 0 0;color:var(--muted)}
+.search{width:270px;padding:11px 13px;border-radius:9px;border:1px solid var(--border);background:var(--panel);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:15px;padding:20px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#59418a}
+.icon{width:42px;height:42px;display:grid;place-items:center;background:#8b5cf61a;border:1px solid #4b3677;border-radius:10px;font-size:20px}.card h3{margin:14px 0 7px}.card p{color:var(--muted);font-size:14px;line-height:1.6}.tags{margin:14px 0}.tag{display:inline-block;font-size:11px;color:#c4b5fd;background:#8b5cf614;border:1px solid #3d2b62;padding:5px 8px;border-radius:6px;margin:2px}.card button{width:100%;padding:10px;border:0;border-radius:8px;background:#fff;color:#111;font-weight:800;cursor:pointer}.card button:hover{background:#ddd}
+.notice{margin:35px 0;padding:18px;border:1px solid #59418a;background:#8b5cf60b;border-radius:12px;color:#cfc7df;font-size:13px;line-height:1.6}
+footer{border-top:1px solid var(--border);margin-top:65px;padding:30px 7%;color:var(--muted);display:flex;justify-content:space-between;font-size:13px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.search{width:100%}.section-head{display:block}.search{margin-top:15px}nav{padding:0 5%}nav .links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">ASHVX <span>HUB</span></div>
+  <div class="links"><a href="#scripts">Scripts</a><a href="#about">About</a><a href="#discord">Discord</a></div>
+</nav>
+
+<section class="hero">
+  <div class="badge">⚡ FREE • PREMIUM-STYLE RESOURCES</div>
+  <h1>Welcome to <span>ASHVX HUB</span></h1>
+  <p>Your central hub for free scripts, tools, and community resources. Browse the collection, read the details, and grab the resources you need.</p>
+  <div class="buttons">
+    <a class="btn primary" href="#scripts">Browse Scripts</a>
+    <a class="btn secondary" href="#discord">Join Community</a>
+  </div>
+</section>
+
+<main class="container" id="scripts">
+  <div class="section-head">
+    <div><h2>Featured Resources</h2><p>Latest resources from ASHVX HUB</p></div>
+    <input class="search" id="search" placeholder="Search resources..." oninput="filterCards()">
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="card" data-name="Blox Fruits Utility">
+      <div class="icon">🍎</div><h3>Blox Fruits Utility</h3>
+      <p>Community resource page for Blox Fruits-related tools and information.</p>
+      <div class="tags"><span class="tag">Blox Fruits</span><span class="tag">Utility</span></div>
+      <button onclick="copyText('Add your approved resource link here')">Copy Link</button>
+    </article>
+    <article class="card" data-name="Script Library">
+      <div class="icon">📜</div><h3>Script Library</h3>
+      <p>A clean place to publish your free, permitted scripts and code resources.</p>
+      <div class="tags"><span class="tag">Scripts</span><span class="tag">Free</span></div>
+      <button onclick="copyText('Add your approved resource link here')">Copy Link</button>
+    </article>
+    <article class="card" data-name="Community Tools">
+      <div class="icon">🛠️</div><h3>Community Tools</h3>
+      <p>Useful tools and resources shared with the ASHVX HUB community.</p>
+      <div class="tags"><span class="tag">Tools</span><span class="tag">Community</span></div>
+      <button onclick="copyText('Add your approved resource link here')">Copy Link</button>
+    </article>
+
+    <article class="card" data-name="LAVA HUB">
+      <div class="icon">🌋</div>
+      <h3>LAVA HUB</h3>
+      <p>Free Blox Fruits script resource published by ASHVX HUB.</p>
+      <div class="tags"><span class="tag">Blox Fruits</span><span class="tag">Script</span><span class="tag">Free</span></div>
+      <button onclick="copyText('loadstring(game:HttpGet(&quot;https://luaegis.net/scripts/v4/loaders/95688543-726e-4d60-b29b-8c37d92881a9.lua&quot;))()')">📋 Copy Script</button>
+    </article>
+  </div>
+
+  <div class="notice" id="about">
+    <strong>🛡️ Safety Notice</strong><br>
+    Only publish resources you are allowed to distribute. Never request passwords, cookies, tokens, or other account credentials. Follow Roblox and Discord rules and keep your community safe.
+  </div>
+</main>
+
+<footer id="discord">
+  <div>© 2026 ASHVX HUB. All rights reserved.</div>
+  <div>Discord • Scripts • Community</div>
+</footer>
+
+<script>
+function filterCards(){
+ const q=document.getElementById('search').value.toLowerCase();
+ document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.name.toLowerCase().includes(q)?'block':'none');
+}
+function copyText(t){
+ navigator.clipboard?.writeText(t);
+ alert('Link placeholder copied. Replace it with your resource URL in the HTML.');
+}
+</script>
+</body>
+</html>
